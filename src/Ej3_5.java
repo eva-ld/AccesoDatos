@@ -5,6 +5,7 @@ import java.io.IOException;
 public class Ej3_5 {
     public static void main(String[] args) {
 
+        System.out.println("=== CREAR DIRECTORIO COPIAS ===");
         // Crear directorio copias en la carpeta de proyecto
         File directorioCopias = new File("copias");
 
@@ -15,6 +16,9 @@ public class Ej3_5 {
         } else {
             System.out.println("No se ha podido crear el directorio \"copias\"");
         }
+
+        System.out.println("\n === CREAR FICHERO CONFIG.TXT DENTRO DE COPIAS ===");
+
 
         // Crear fichero "config.txt" dentro del directorio "copias"
         File ficheroConfig = new File(directorioCopias, "config.txt");
@@ -31,44 +35,40 @@ public class Ej3_5 {
 
         // Mostrar el contenido del directorio "copias"
 
-        System.out.println("=== CONTENIDO DENTRO DE COPIAS ===");
+        System.out.println("\n=== CONTENIDO DENTRO DE COPIAS ===");
         File[] elementos = directorioCopias.listFiles();
 
-    }
-
-}
-
-        // 3. Mostrar el contenido del directorio "copias"
-        System.out.println("\n--- Contenido del directorio 'copias' ---");
-        File[] elementos = directorioCopias.listFiles();
-
-        if (elementos != null && elementos.length > 0) {
-            for (File elemento : elementos) {
-                if (elemento.isDirectory()) {
-                    System.out.println("[Directorio] " + elemento.getName());
-                } else if (elemento.isFile()) {
-                    System.out.println("[Fichero] " + elemento.getName());
+        if  (elementos != null && elementos.length > 0) {
+            for (File file : elementos) {
+                if (file.isDirectory()) {
+                    System.out.println("Directorio: " + file.getName());
+                }
+                else if (file.isFile()) {
+                    System.out.println("El fichero: " + file.getName());
                 }
             }
-        } else {
-            System.out.println("El directorio está vacío.");
+        } else  {
+            System.out.println("DIrectorio vacio");
         }
 
-        // 4. Modificación: Eliminar config.txt y comprobar qué ocurre al eliminar "copias"
-        System.out.println("\n--- Eliminación de elementos ---");
+        // Eliminar fichero config
 
-        // Eliminación del fichero config.txt
+        System.out.println("\n=== Eliminar fichero y comprobaciones ===");
         if (ficheroConfig.delete()) {
-            System.out.println("Fichero 'config.txt' eliminado correctamente.");
-        } else {
-            System.out.println("No se pudo eliminar el fichero 'config.txt' (o no existía).");
+            System.out.println("Fichero 'config.txt' eliminado correctamente");
+        } else  {
+            System.out.println("El fichero 'config.txt' no se ha podido borrar o no existe");
         }
 
-        // Intento de eliminación del directorio copias
+        // ¿Qué pasa si borramos copias?
         if (directorioCopias.delete()) {
-            System.out.println("Directorio 'copias' eliminado correctamente.");
+            System.out.println("El directorio 'copias' eliminado correctamente");
         } else {
-            System.out.println("No se pudo eliminar el directorio 'copias'.");
+            System.out.println("No se puede borrar el directorio 'Copias' o no existía");
         }
+
+
+
     }
+
 }
