@@ -1,3 +1,5 @@
+package Ejercicio3_5;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -65,7 +67,7 @@ public class Ej3_5 {
         } else {
             System.out.println("No se puede borrar el directorio 'Copias' o no existía");
         }
-        
+
     }
 
 }
