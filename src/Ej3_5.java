@@ -65,9 +65,7 @@ public class Ej3_5 {
         } else {
             System.out.println("No se puede borrar el directorio 'Copias' o no existía");
         }
-
-
-
+        
     }
 
 }
