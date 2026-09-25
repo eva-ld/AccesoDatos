@@ -55,13 +55,10 @@ public class Ej4_5 {
             }
 
             br.close();
-
             System.out.println("La palabra aparece en " + contadorPalabra + " líneas.");
 
         } catch (IOException e) {
-
             System.out.println("Error al leer el fichero");
-
         }
 
 
