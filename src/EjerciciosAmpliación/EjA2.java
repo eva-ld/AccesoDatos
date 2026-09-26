@@ -1,7 +1,6 @@
 package EjerciciosAmpliación;
 
-// Crea un programa que pida al usuario el nombre de un fichero de texto
-// y muestre su contenido en pantalla.
+// Crea un programa que pida al usuario el nombre de un fichero de texto y muestre su contenido en pantalla.
 //  Tras cada 24 líneas, deberá hacer una pausa hasta que el usuario pulse Intro.
 
 import java.io.BufferedReader;
@@ -34,10 +33,8 @@ public class EjA2 {
 
             }
 
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (IOException e) {
+            System.out.println("Error al leer el fichero");
         }
-
-
     }
 }
