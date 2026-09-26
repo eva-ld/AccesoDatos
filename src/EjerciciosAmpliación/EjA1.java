@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 // Crea un programa que pida frases al usuario y las guarde en un fichero de texto, cada frase en una línea.
 
+
 public class EjA1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
